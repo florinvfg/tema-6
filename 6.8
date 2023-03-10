@@ -1,0 +1,24 @@
+
+
+ public static void main(String[] args) {
+        final String prefijo = "Javalin,javalon";
+        final String sufijo = "javalen, len, len";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("escriba una frase: ");
+        String entrada = sc.nextLine();
+        boolean idiomaJavalandia = false;
+        if (entrada.startsWith(prefijo)) {
+            idiomaJavalandia = true;
+            entrada = entrada.substring(prefijo.length());
+        } else if (entrada.endsWith(sufijo)) {
+            idiomaJavalandia = true;
+            entrada = entrada.substring(0, entrada.length() - sufijo.length());
+        }
+        if (idiomaJavalandia) {
+            entrada = entrada.strip();
+            System.out.println(entrada);
+        } else {
+            System.out.println("No esta escrito en el idioma de Javalandia");
+        }
+
+    }
